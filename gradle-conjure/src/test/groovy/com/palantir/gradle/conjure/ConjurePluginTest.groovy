@@ -104,6 +104,7 @@ class ConjurePluginTest extends IntegrationSpec {
                 returns: StringExample
         '''.stripIndent()
         file("gradle.properties") << "org.gradle.daemon=false"
+        file("gradle.properties") << "org.gradle.jvmArgs=\"-Xmx256m -XX:MaxPermSize=64m\""
     }
 
     def 'compileConjure generates code and ir in subprojects'() {

@@ -100,6 +100,7 @@ class ConjurePublishTypeScriptTest extends IntegrationSpec {
                 returns: StringExample
         '''.stripIndent()
         file("gradle.properties") << "org.gradle.daemon=false"
+        file("gradle.properties") << "org.gradle.jvmArgs=\"-Xmx256m -XX:MaxPermSize=64m\""
     }
 
     def 'installs dependencies'() {

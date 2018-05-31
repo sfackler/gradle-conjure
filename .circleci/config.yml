@@ -7,7 +7,8 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8u171-jdk-node-browsers
-    resource_class: xlarge
+    environment:
+      GRADLE_OPTS: -Xmx64m
 
     steps:
       - checkout
